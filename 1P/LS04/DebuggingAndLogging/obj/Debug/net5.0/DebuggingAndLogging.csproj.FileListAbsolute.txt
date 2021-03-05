@@ -1,0 +1,16 @@
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\bin\Debug\net5.0\DebuggingAndLogging.exe
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\bin\Debug\net5.0\DebuggingAndLogging.deps.json
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\bin\Debug\net5.0\DebuggingAndLogging.runtimeconfig.json
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\bin\Debug\net5.0\DebuggingAndLogging.runtimeconfig.dev.json
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\bin\Debug\net5.0\DebuggingAndLogging.dll
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\bin\Debug\net5.0\ref\DebuggingAndLogging.dll
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\bin\Debug\net5.0\DebuggingAndLogging.pdb
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\DebuggingAndLogging.csprojAssemblyReference.cache
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\DebuggingAndLogging.GeneratedMSBuildEditorConfig.editorconfig
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\DebuggingAndLogging.AssemblyInfoInputs.cache
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\DebuggingAndLogging.AssemblyInfo.cs
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\DebuggingAndLogging.csproj.CoreCompileInputs.cache
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\DebuggingAndLogging.dll
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\ref\DebuggingAndLogging.dll
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\DebuggingAndLogging.pdb
+E:\Ceti-Holders\7A-Feb-Jun-2021\1P\LS04\DebuggingAndLogging\obj\Debug\net5.0\DebuggingAndLogging.genruntimeconfig.cache
