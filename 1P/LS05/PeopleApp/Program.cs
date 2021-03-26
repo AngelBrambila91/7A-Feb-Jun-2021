@@ -1,6 +1,7 @@
 ﻿using System;
 using GeneralLibrary;
 using static System.Console;
+using System.Diagnostics;
 
 namespace PeopleApp
 {
@@ -81,6 +82,8 @@ namespace PeopleApp
             #region TestLocal Functions
                 WriteLine($"5! is {Person.Factorial(5)}");
             #endregion
+
+            #region Delegates
             var p1 = new Person();
             int answer = p1.MethodICall("Something");
             WriteLine(answer);
@@ -99,8 +102,62 @@ namespace PeopleApp
             dali.Poke();
             dali.Poke();
             dali.Poke();
-            dali.Poke();
+            dali.Poke();                
+            #endregion
 
+            #region Interfaces
+                
+            Person [] people = 
+            {
+                new Person { Name = "Bañuelos"},
+                new Person { Name = "Ruth"},
+                new Person { Name = "Felix"},
+                new Person { Name = "Angel"},
+                new Person { Name = "Jaime"}
+            };
+
+            WriteLine("Initial order of peolple : ");
+            foreach (var person in people)
+            {
+                WriteLine($" {person.Name}");
+            }
+            WriteLine("Use persons IComparable");
+            Array.Sort(people);
+            foreach (var person in people)
+            {
+                WriteLine($" {person.Name}");
+            }
+
+            WriteLine("Use persons IComparer");
+            Array.Sort(people, new PersonComparer());
+            foreach (var person in people)
+            {
+                WriteLine($" {person.Name}");
+            }
+            #endregion
+
+            #region Generics
+                var t1 = new Thing();
+                t1.Data = 42;
+                WriteLine($"Thing with an integer : {t1.Process(42)}");
+                var t2 = new Thing();
+                t2.Data = "apple";
+                WriteLine($"Thing with a string : {t2.Process("apple")}");
+
+
+                var gt1 = new GenericThing<int>();
+                gt1.Data = 42;
+                WriteLine($"Thing with an integer : {t1.Process(42)}");
+                var gt2 = new GenericThing<string>();
+                gt2.Data = "apple";
+                WriteLine($"Thing with a string : {t2.Process("apple")}");
+
+                string number1 = "4";
+                WriteLine($"{number1} squared is {Squarer.Square<string>(number1)}");
+                byte number2 = 3;
+                WriteLine($"{number2} squared is {Squarer.Square<byte>(number2)}");
+            #endregion        
+            
         }
         #region Using Delegates
         private static void Dali_Shout(object sender, EventArgs e)

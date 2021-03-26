@@ -4,7 +4,7 @@ using static System.Console;
 
 namespace GeneralLibrary
 {
-    public class Person : object
+    public class Person : IComparable<Person>
     {
         // Member Variables
         /*
@@ -120,8 +120,12 @@ namespace GeneralLibrary
                 }
             }
         }
-        #endregion
 
+        public int CompareTo(Person other)
+        {
+            return Name.CompareTo(other.Name);
+        }
+        #endregion
 
     }
 }
