@@ -7,11 +7,11 @@ namespace GeneralLibrary
         {
             if( Data == input)
             {
-                return "Data and input are the same.";
+                return "Data and input are the same";
             }
             else
             {
-                return "Data and input are NOT the same";
+                return "Data and input are NOT the same.";
             }
         }
     }

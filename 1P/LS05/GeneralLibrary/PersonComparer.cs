@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using static System.Console;
 
 namespace GeneralLibrary
 {
@@ -8,9 +10,9 @@ namespace GeneralLibrary
         {
             // Compare Name Lengths
             int result = x.Name.Length.CompareTo(y.Name.Length);
+            // if they're equal
             if(result == 0)
             {
-                // Then compare by names
                 return x.Name.CompareTo(y.Name);
             }
             else

@@ -5,9 +5,9 @@ namespace GeneralLibrary
     {
          void Play();
          void Pause();
-         void Stop()
+         void Stop() // default implementation
          {
-             WriteLine("Default Implementation of Stop.");
+             WriteLine("Default Implementation of Stop");
          }
     }
 }

@@ -98,24 +98,29 @@ namespace GeneralLibrary
         #endregion
 
         #region Delegates
+
         public int MethodICall(string input)
         {
             return input.Length;
         }
 
-        // Event Handler
+        public int MethodICall2(string input)
+        {
+            return input.Length;
+        }
+
         public event EventHandler Shout;
         // field
         public int AngerLevel;
         // method
         public void Poke()
         {
-            AngerLevel++;
+            AngerLevel ++;
             if(AngerLevel >= 3)
             {
-                if(Shout != null)
+                if(Shout!= null)
                 {
-                    //call the delegate
+                    // then call the delegate
                     Shout(this, EventArgs.Empty);
                 }
             }
@@ -126,6 +131,27 @@ namespace GeneralLibrary
             return Name.CompareTo(other.Name);
         }
         #endregion
+
+
+        public void TimeTravel(DateTime when)
+        {
+            if (when <= DateOfBirth)
+            {
+                throw new PersonException("If you travel back in time time to a date earlier than your own birth, THE UNIVERSE WILL EXPLODE!!!");
+            }
+            else
+            {
+                WriteLine($"Welcome to {when:yyyy}");
+            }
+        }
+
+        #region Override Methods
+        public override string ToString()
+        {
+            return $"{Name} is a {base.ToString()}";
+        }
+        #endregion
+
 
     }
 }

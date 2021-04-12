@@ -1,13 +1,12 @@
 ﻿using System;
 using GeneralLibrary;
 using static System.Console;
-using System.Diagnostics;
 
 namespace PeopleApp
 {
     class Program
     {
-        delegate int DelegateWithMatchSignature (string s);
+        delegate int DelegateWithMatch(string s);
         static void Main(string[] args)
         {
             #region POO Stuff
@@ -74,9 +73,7 @@ namespace PeopleApp
                 WriteLine($"{ana.Name} has {ana.Children.Count} children");
                 WriteLine($"{tiberio.Name} has {tiberio.Children.Count} children");
                 WriteLine($"{vicente.Name} has {vicente.Children.Count} children");
-                WriteLine($"{ana.Name}'s first child is named \"{ana.Children[0].Name}\".");
-
-
+                WriteLine($"{ana.Name}'s first child is named \"{ana.Children[1].Name}\".");
             #endregion
 
             #region TestLocal Functions
@@ -86,95 +83,153 @@ namespace PeopleApp
             #region Delegates
             var p1 = new Person();
             int answer = p1.MethodICall("Something");
+
+            // Instance the delegate
+            var d = new DelegateWithMatch(p1.MethodICall);
+            // call the instance
+            int answer2 = d("Tuple");
             WriteLine(answer);
-            // create delegate instance
-            var d = new DelegateWithMatchSignature(p1.MethodICall);
-            // call delegate
-            int asnwer2 = d("Amibas");
-            WriteLine(asnwer2);
+            WriteLine(answer2);
 
-            var dali = new Person();
-            dali.Name = "Dali";
-            dali.Shout += Dali_Shout;
-            dali.Shout += Oscar_Shout;
-            dali.Shout += Tach_Shout;
-            dali.Poke();
-            dali.Poke();
-            dali.Poke();
-            dali.Poke();
-            dali.Poke();                
+            
+            ana.Shout += Ana_Shout;
+            ana.Shout += Tiberio_Shout;
+            ana.Shout += Luis_Shout;
+            ana.Poke();
+            ana.Poke();
+            ana.Poke();
+            ana.Poke();
+            ana.Poke();
             #endregion
 
-            #region Interfaces
-                
-            Person [] people = 
-            {
-                new Person { Name = "Bañuelos"},
-                new Person { Name = "Ruth"},
-                new Person { Name = "Felix"},
-                new Person { Name = "Angel"},
-                new Person { Name = "Jaime"}
-            };
+            #region IComparable
+                Person[] people =
+                {
+                    new Person { Name = "Juan"},
+                    new Person { Name = "Ana"},
+                    new Person { Name = "Tiberio"},
+                    new Person { Name = "Estela"},
+                    new Person { Name = "Diego"},
+                };
 
-            WriteLine("Initial order of peolple : ");
-            foreach (var person in people)
-            {
-                WriteLine($" {person.Name}");
-            }
-            WriteLine("Use persons IComparable");
-            Array.Sort(people);
-            foreach (var person in people)
-            {
-                WriteLine($" {person.Name}");
-            }
+                WriteLine("Initial List");
+                foreach (var person in people)
+                {
+                    WriteLine($"{person.Name}");
+                }
 
-            WriteLine("Use persons IComparer");
-            Array.Sort(people, new PersonComparer());
-            foreach (var person in people)
-            {
-                WriteLine($" {person.Name}");
-            }
+                WriteLine("Using IComparable Interface");
+                Array.Sort(people);
+                foreach (var person in people)
+                {
+                    WriteLine($"{person.Name}");
+                }
+
             #endregion
 
-            #region Generics
+            #region IComparer
+                WriteLine("Use IComparer implementation to sort:");
+                Array.Sort(people, new PersonComparer());
+                foreach (var person in people)
+                {
+                    WriteLine($"{person.Name}");
+                }
+            #endregion
+
+            #region Using Generics
                 var t1 = new Thing();
                 t1.Data = 42;
                 WriteLine($"Thing with an integer : {t1.Process(42)}");
                 var t2 = new Thing();
                 t2.Data = "apple";
-                WriteLine($"Thing with a string : {t2.Process("apple")}");
-
+                WriteLine($"Thing with a string : {t1.Process("apple")}");
 
                 var gt1 = new GenericThing<int>();
                 gt1.Data = 42;
-                WriteLine($"Thing with an integer : {t1.Process(42)}");
+                WriteLine($"Generic Thing with an integer : {gt1.Process(42)}");
                 var gt2 = new GenericThing<string>();
                 gt2.Data = "apple";
-                WriteLine($"Thing with a string : {t2.Process("apple")}");
+                WriteLine($"Generic Thing with an integer : {gt2.Process("apple")}");
 
                 string number1 = "4";
                 WriteLine($"{number1} squared is {Squarer.Square<string>(number1)}");
                 byte number2 = 3;
                 WriteLine($"{number2} squared is {Squarer.Square<byte>(number2)}");
-            #endregion        
-            
+            #endregion
+
+            #region Using struct
+            var dv1 = new DisplacementVector(3, 5);
+            var dv2 = new DisplacementVector(-2 , 7);
+            var dv3 = dv1 + dv2;
+            WriteLine($"{dv3.X} , {dv3.Y}");
+             #endregion
+
+             /*
+             using (Animal a = new Animal())
+             {
+                 // code Animal
+             }
+
+             .... compiler converts previous code into something like this ...
+             Animal a = new Animal();
+             try
+             {
+                 // code Animal
+             }
+             finally
+             {
+                 if (a != null ) a.Dispose();
+             }
+             */
+             
+
+             #region Using inheritance
+                 Employee luis = new Employee
+                 {
+                     Name = "Luis Adrian",
+                     DateOfBirth = new DateTime(1990, 12,12)
+                 };
+                 luis.WriteToConsole();
+                 luis.EmployeeCode = "1300851";
+                 luis.HireDate = new DateTime(2011, 11, 23);
+                 WriteLine($"{luis.Name} was hired in {luis.HireDate:dd/MM/yy}");
+
+                 WriteLine(luis.ToString());
+                 
+             #endregion
+
+            #region catching own PersonExceptions
+                 try
+                 {
+                     luis.TimeTravel(new DateTime(1999,12,31));
+                     luis.TimeTravel(new DateTime(1950,12,25));
+                 }
+                 catch (PersonException ex)
+                 {
+                     WriteLine(ex.Message);
+                 }
+             #endregion
         }
         #region Using Delegates
-        private static void Dali_Shout(object sender, EventArgs e)
-        {
-            Person p = (Person)sender;
-            WriteLine($"{p.Name} is this angry : {p.AngerLevel}");
-        }
+            private static void Ana_Shout(object sender, EventArgs e)
+            {
+                Person p = (Person)sender;
+                WriteLine($"{p.Name} is this angry : {p.AngerLevel}");
+            }
 
-        private static void Oscar_Shout(object sender, EventArgs e)
-        {
-            
-        }
+            private static void Tiberio_Shout(object sender, EventArgs e)
+            {
+                
+            }
 
-        private static void Tach_Shout(object sender, EventArgs e)
-        {
-            WriteLine("Hello Govnr");
-        }
+            private static void Luis_Shout(object sender, EventArgs e)
+            {
+                Person p = (Person)sender;
+                WriteLine($"{p.Name} is this angry : {p.AngerLevel}");
+            }
+
         #endregion
+
+
     }
 }

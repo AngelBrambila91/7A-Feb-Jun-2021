@@ -5,17 +5,12 @@ namespace GeneralLibrary
     {
         public void Pause()
         {
-            WriteLine("DVD player is paussing");
+            WriteLine("DVD player is pausing.");
         }
 
         public void Play()
         {
             WriteLine("DVD player is playing");
-        }
-
-        public void Stop()
-        {
-            WriteLine("DVD is stopping");
         }
     }
 }

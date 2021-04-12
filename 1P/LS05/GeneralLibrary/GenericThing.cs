@@ -4,15 +4,16 @@ namespace GeneralLibrary
     public class GenericThing<T> where T : IComparable
     {
         public T Data = default(T);
-        public string Process (object input)
+
+        public string Process (T input)
         {
-            if(Data.CompareTo(input) == 0)
+            if( Data.CompareTo(input) == 0)
             {
-                return "Data input are the same.";
+                return "Data and input are the same";
             }
             else
             {
-                return "Data input are NOT the same.";
+                return "Data and input are NOT the same.";
             }
         }
     }
