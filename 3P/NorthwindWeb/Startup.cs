@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using System.IO;
+using Microsoft.EntityFrameworkCore;
+using Packt.Shared;
 namespace NorthwindWeb
 {
     public class Startup
@@ -17,6 +19,9 @@ namespace NorthwindWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            string databasePath = Path.Combine("..", "Northwind.db");
+            services.AddDbContext<Northwind>(options => 
+            options.UseSqlite($"Data Source = {databasePath}"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

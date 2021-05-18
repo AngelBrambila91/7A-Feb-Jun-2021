@@ -15617,27 +15617,6 @@
     "CSharpLanguageVersion": 900
   },
   "RootNamespace": "NorthwindWeb",
-  "Documents": [
-    {
-      "FilePath": "e:\\Ceti-Holders\\7A-Feb-Jun-2021\\3P\\NorthwindWeb\\Pages\\index.cshtml",
-      "TargetPath": "Pages\\index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\Ceti-Holders\\7A-Feb-Jun-2021\\3P\\NorthwindWeb\\Pages\\Shared\\_Layout.cshtml",
-      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\Ceti-Holders\\7A-Feb-Jun-2021\\3P\\NorthwindWeb\\Pages\\suppliers.cshtml",
-      "TargetPath": "Pages\\suppliers.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\Ceti-Holders\\7A-Feb-Jun-2021\\3P\\NorthwindWeb\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    }
-  ],
+  "Documents": [],
   "SerializationFormat": "0.2"
 }
